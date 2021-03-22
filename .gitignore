@@ -1,0 +1,11 @@
+.cache
+.idea
+dist
+node_modules
+
+.env.production
+.env
+
+scripts/data/*
+!scripts/data/.keep
+!scripts/data/eng_words_1k.jsonl
