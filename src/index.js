@@ -3,7 +3,8 @@ import jQuery from "jquery";
 window.$ = jQuery; // workaround for https://github.com/parcel-bundler/parcel/issues/333
 import "bootstrap/js/src/modal";
 
-const typesense = new TypesenseSearchClient({
+let TYPESENSE_SERVER_CONFIG = {
+  apiKey: process.env.TYPESENSE_SEARCH_API_KEY,
   nodes: [
     {
       host: process.env.TYPESENSE_HOST,
@@ -11,8 +12,34 @@ const typesense = new TypesenseSearchClient({
       protocol: process.env.TYPESENSE_PROTOCOL,
     },
   ],
-  apiKey: process.env.TYPESENSE_SEARCH_API_KEY,
-});
+  numRetries: 8,
+};
+
+if (process.env[`TYPESENSE_HOST_2`]) {
+  TYPESENSE_SERVER_CONFIG.nodes.push({
+    host: process.env[`TYPESENSE_HOST_2`],
+    port: process.env.TYPESENSE_PORT,
+    protocol: process.env.TYPESENSE_PROTOCOL,
+  });
+}
+
+if (process.env[`TYPESENSE_HOST_3`]) {
+  TYPESENSE_SERVER_CONFIG.nodes.push({
+    host: process.env[`TYPESENSE_HOST_3`],
+    port: process.env.TYPESENSE_PORT,
+    protocol: process.env.TYPESENSE_PROTOCOL,
+  });
+}
+
+if (process.env[`TYPESENSE_HOST_NEAREST`]) {
+  TYPESENSE_SERVER_CONFIG["nearestNode"] = {
+    host: process.env[`TYPESENSE_HOST_NEAREST`],
+    port: process.env.TYPESENSE_PORT,
+    protocol: process.env.TYPESENSE_PROTOCOL,
+  };
+}
+
+const typesense = new TypesenseSearchClient(TYPESENSE_SERVER_CONFIG);
 
 let lastWord = "";
 window.document

@@ -33,7 +33,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title font-weight-normal" id="aboutLabel">
-                    About
+                    How it works
                 </h5>
                 <button type="button" class="close btn btn-primary" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -44,11 +44,11 @@
                     This showcase uses <a href="https://typesense.org/" target="_blank">Typesense's</a> typo-correction feature to build a Type-Ahead Spellchecker.
                 </p>
                 <p>
-                    We index all <a href="https://www.kaggle.com/rtatman/english-word-frequency" target="_blank">dictionary words</a>, along with the popularity of each word in a Typesense collection.
+                    We index 333K <a href="https://www.kaggle.com/rtatman/english-word-frequency" target="_blank">dictionary words</a>, along with the popularity of each word in a Typesense collection.
                     We then extract the last typed word and send it as a "search" to Typesense. Since Typesense searches for typo-corrected words automatically, it returns closely related typo-corrected words from the dictionary, which we show as type-ahead suggestions.
                 </p>
                 <p>
-                    The search backend is powered by a single-node 512MB RAM <a href="https://cloud.typesense.org" target="_blank">Typesense Cloud</a> cluster in Oregon.
+                    The search backend is powered by a 3-node geo-distributed <a href="https://cloud.typesense.org" target="_blank">Typesense Cloud</a> cluster with 512MB RAM and nodes in Oregon, Frankfurt and Mumbai.
                 </p>
                 <p>
                     View source here <a href="https://github.com/typesense/showcase-spellcheck" target="_blank">here</a>.

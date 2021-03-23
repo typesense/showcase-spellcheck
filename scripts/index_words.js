@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const BATCH_SIZE = process.env.BATCH_SIZE || 5000;
 const MAX_LINES = process.env.MAX_LINES || Infinity;
-const DATA_FILE = process.env.DATA_FILE || "./scripts/data/eng_words.jsonl";
+const DATA_FILE = process.env.DATA_FILE || "./scripts/data/eng_words_1K.jsonl";
 
 const fs = require("fs");
 const readline = require("readline");
