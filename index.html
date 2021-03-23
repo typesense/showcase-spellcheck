@@ -1,14 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./src/index.scss">
 </head>
 <body>
 <div class="container p-5">
-    <h1>Typeahead spellchecker</h1>
-    <p class="lead">Powered by <a href="https://typesense.org" target="_blank" class="text-secondary">Typesense Search</a></p>
-    <textarea id="textbox" class="form-control p-2 mt-4">Type some text here</textarea>
+    <div class="row">
+        <div class="col-sm">
+            <h1>Typeahead spellchecker</h1>
+            <p class="lead">Powered by <a href="https://typesense.org" target="_blank" class="text-secondary">Typesense
+                Search</a></p>
+            <textarea id="textbox" class="form-control p-2 mt-4">Type some text here</textarea>
 
-    <ul id="suggestions-list" class="mt-2 list-group list-group-horizontal"></ul>
+            <ul id="suggestions-list" class="mt-2 list-group list-group-horizontal"></ul>
+        </div>
+    </div>
 </div>
 <script src="./src/index.js"></script>
 </body>
