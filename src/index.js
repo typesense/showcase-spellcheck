@@ -1,6 +1,7 @@
 import { SearchClient as TypesenseSearchClient } from "typesense";
 import jQuery from "jquery";
 window.$ = jQuery; // workaround for https://github.com/parcel-bundler/parcel/issues/333
+import "bootstrap/js/src/modal";
 
 const typesense = new TypesenseSearchClient({
   nodes: [

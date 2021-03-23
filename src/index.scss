@@ -64,3 +64,12 @@ body {
 #textbox {
   height: 250px;
 }
+
+a {
+  color: darken($primary, 18%);
+
+  &:hover {
+    border-bottom: darken($primary, 5%) 1px solid;
+    text-decoration: none;
+  }
+}

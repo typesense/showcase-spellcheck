@@ -16,12 +16,51 @@
             <h1>Typeahead Spellchecker</h1>
             <p class="lead">Powered by <a href="https://typesense.org" target="_blank" class="text-secondary">Typesense
                 Search</a></p>
+            <p>
+                <a href="#" class="text-dark" aria-roledescription="button" data-toggle="modal" data-target="#aboutModal">
+                    <span class="small">About</span>
+                </a>
+            </p>
             <textarea id="textbox" class="form-control p-2 mt-4">Type some text here</textarea>
 
             <ul id="suggestions-list" class="mt-2 list-group list-group-horizontal"></ul>
         </div>
     </div>
 </div>
+<!-- About Modal -->
+<div id="aboutModal" class="modal fade" tabindex="-1" aria-labelledby="aboutLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font-weight-normal" id="aboutLabel">
+                    About
+                </h5>
+                <button type="button" class="close btn btn-primary" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    This showcase uses <a href="https://typesense.org/" target="_blank">Typesense's</a> typo-correction feature to build a Type-Ahead Spellchecker.
+                </p>
+                <p>
+                    We index all <a href="https://www.kaggle.com/rtatman/english-word-frequency" target="_blank">dictionary words</a>, along with the popularity of each word in a Typesense collection.
+                    We then extract the last typed word and send it as a "search" to Typesense. Since Typesense searches for typo-corrected words automatically, it returns closely related typo-corrected words from the dictionary, which we show as type-ahead suggestions.
+                </p>
+                <p>
+                    The search backend is powered by a single-node 512MB RAM <a href="https://cloud.typesense.org" target="_blank">Typesense Cloud</a> cluster in Oregon.
+                </p>
+                <p>
+                    View source here <a href="https://github.com/typesense/showcase-spellcheck" target="_blank">here</a>.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="./src/index.js"></script>
 </body>
 </html>
