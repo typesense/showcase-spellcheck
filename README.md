@@ -19,6 +19,8 @@ yarn typesenseServer
 
 yarn index
 
+ln -s .env.development .env
+
 yarn start
 ```
 
