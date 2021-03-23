@@ -6,6 +6,8 @@ Use Typesense's typo-correction feature to build a Type-Ahead Spellchecker.
 
 https://spellcheck.typesense.org/
 
+The UI is hosted on S3, the data is indexed in a single-node Typesense Cloud cluster with 512MB RAM in Oregon.
+
 ## How it works
 
 We index all [dictionary words](https://www.kaggle.com/rtatman/english-word-frequency), along with the popularity of each word in a Typesense collection.
