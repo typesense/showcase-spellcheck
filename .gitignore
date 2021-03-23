@@ -9,3 +9,5 @@ node_modules
 scripts/data/*
 !scripts/data/.keep
 !scripts/data/eng_words_1k.jsonl
+
+typesense-server-data/

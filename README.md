@@ -19,9 +19,9 @@ We then extract the last typed word and send it as a "search" to Typesense. Sinc
 ```shell
 yarn typesenseServer
 
-yarn index
-
 ln -s .env.development .env
+
+yarn index
 
 yarn start
 ```

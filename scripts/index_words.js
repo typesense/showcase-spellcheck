@@ -76,7 +76,7 @@ module.exports = (async () => {
 
     if (currentLine % BATCH_SIZE === 0) {
       await indexWordsToTypesense(typesense, collectionName, words);
-      console.log(` Lines upto ${currentLine} ✅`);
+      console.log(` Words upto ${currentLine} ✅`);
       words = [];
     }
 
