@@ -36,6 +36,7 @@ window.document
           q: currentWord,
           query_by: "word",
           collection: "english_words",
+          sort_by: "popularity:desc",
           per_page: 4,
         },
       ],
