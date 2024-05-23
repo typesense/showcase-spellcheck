@@ -1,7 +1,6 @@
 {
   "name": "showcase-spellcheck",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "start": "parcel index.html --port 3000",
@@ -13,17 +12,27 @@
   },
   "devDependencies": {
     "@babel/runtime": "^7.24.5",
-    "@parcel/transformer-sass": "2.12.0",
-    "buffer": "^5.5.0||^6.0.0",
+    "@parcel/config-default": "^2.12.0",
+    "@parcel/packager-raw-url": "^2.12.0",
+    "@parcel/resolver-glob": "^2.12.0",
+    "@parcel/transformer-raw": "^2.12.0",
+    "@parcel/transformer-sass": "^2.12.0",
+    "@parcel/transformer-webmanifest": "^2.12.0",
+    "buffer": "^6.0.3",
     "parcel": "^2.12.0",
     "prettier": "^2.2.1",
-    "process": "^0.11.10",
-    "sass": "^1.32.8"
+    "process": "^0.11.10"
   },
   "dependencies": {
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^4.5.2",
+    "@popperjs/core": "^2.5.3",
+    "popper.js": "^1.16.1",
     "dotenv": "^8.2.0",
-    "jquery": "^3.6.0",
+    "jquery": "^3.5.1",
     "typesense": "^0.11.1"
+  },
+  "browserslist": ["> 0.5%, last 2 versions, not dead"],
+  "engines": {
+    "node": "20.x"
   }
 }
