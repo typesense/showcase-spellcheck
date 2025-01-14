@@ -1,7 +1,7 @@
-import { SearchClient as TypesenseSearchClient } from "typesense";
-import jQuery from "jquery";
+import { SearchClient as TypesenseSearchClient } from 'typesense';
+import jQuery from 'jquery';
 window.$ = jQuery; // workaround for https://github.com/parcel-bundler/parcel/issues/333
-import "bootstrap/js/src/modal";
+import 'bootstrap/js/src/modal';
 
 let TYPESENSE_SERVER_CONFIG = {
   apiKey: process.env.TYPESENSE_SEARCH_API_KEY,
@@ -32,7 +32,7 @@ if (process.env[`TYPESENSE_HOST_3`]) {
 }
 
 if (process.env[`TYPESENSE_HOST_NEAREST`]) {
-  TYPESENSE_SERVER_CONFIG["nearestNode"] = {
+  TYPESENSE_SERVER_CONFIG['nearestNode'] = {
     host: process.env[`TYPESENSE_HOST_NEAREST`],
     port: process.env.TYPESENSE_PORT,
     protocol: process.env.TYPESENSE_PROTOCOL,
@@ -41,13 +41,13 @@ if (process.env[`TYPESENSE_HOST_NEAREST`]) {
 
 const typesense = new TypesenseSearchClient(TYPESENSE_SERVER_CONFIG);
 
-let lastWord = "";
+let lastWord = '';
 window.document
-  .getElementById("textbox")
-  .addEventListener("keyup", async (event) => {
+  .getElementById('textbox')
+  .addEventListener('keyup', async (event) => {
     const currentWord = event.target.value
       .trim()
-      .split(" ")
+      .split(' ')
       .pop()
       .toLowerCase();
 
@@ -62,27 +62,27 @@ window.document
       searches: [
         {
           q: currentWord,
-          query_by: "word",
-          collection: "english_words",
-          sort_by: "popularity:desc",
+          query_by: 'word',
+          collection: 'english_words',
+          sort_by: 'popularity:desc',
           per_page: 4,
         },
       ],
     });
 
-    const suggestedWords = (results["results"][0] || { hits: [] })["hits"].map(
-      (h) => h["document"]["word"]
+    const suggestedWords = (results['results'][0] || { hits: [] })['hits'].map(
+      (h) => h['document']['word']
     );
-    console.log(`${currentWord} => ${suggestedWords.join(" | ")}`);
+    console.log(`${currentWord} => ${suggestedWords.join(' | ')}`);
 
     // Remove existing suggestions, show new ones
-    $("#suggestions-list").empty();
+    $('#suggestions-list').empty();
     suggestedWords.forEach((word) => {
       // Don't show suggestions if it's exact match
       if (word === currentWord) {
         return;
       }
-      $("#suggestions-list").append(
+      $('#suggestions-list').append(
         $(`<li class="list-group-item">${word}</li>`)
       );
     });
