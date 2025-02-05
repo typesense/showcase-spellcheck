@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @import 'bootstrap';
 
 body {
@@ -9,10 +11,18 @@ body {
 }
 
 a {
-  color: darken($primary, 18%);
+  text-decoration: none;
+  color: color.adjust($primary, $lightness: -18%);
 
   &:hover {
-    border-bottom: darken($primary, 5%) 1px solid;
+    border-bottom: color.adjust($primary, $lightness: -5%) 1px solid;
     text-decoration: none;
   }
+}
+.list-group-item {
+  border-color: #1a0f1920 !important;
+  padding: 12px 20px;
+}
+.small {
+  font-weight: 400;
 }
